@@ -1,0 +1,102 @@
+/* .navbar-vertical.navbar-expand-xs.navbar-collapse{
+    overflow: hidden !important;
+    height: 100% !important; 
+}
+.navbar-vertical.navbar-expand-xs{
+    overflow-y: hidden !important;
+} */
+
+
+.navbar-vertical.navbar-expand-xs .navbar-collapse{
+    overflow: hidden !important;
+    height: 100% !important;
+}
+.navbar-vertical.navbar-expand-xs {
+    overflow-y: hidden !important;
+}
+/* .dashboard{
+    font-family: 'Times New Roman', Times, serif;
+} */
+.mainad{
+    font-family:"Roboto Slab" !important;
+    font-size:large;
+}
+.mainad1{
+    font-family:"Roboto Slab" !important;
+    font-size:x-large;
+
+}
+.i1{
+    position: relative;
+    left: 10% !important;
+}
+.bg-gray{
+    background-color: #f0f2f5 !important;
+}
+.bg-gradient-o{
+    background-image: linear-gradient( 
+195deg
+, #ff3226,#9f3717 100% );
+}
+.bg-gradient-g{
+    background-image: linear-gradient( 
+195deg
+ , #d5d5d5 0%, #0a0a0a 100%);
+}
+.bg-gradient-primary{
+    background-image: linear-gradient(
+        195deg, #ef180e,#ff3d02 100%
+    ); 
+}
+/* .nav1 NavLink:active{
+    background-color: linear-gradient(
+        195deg, #ef180e,#ff3d02 100%
+    );  
+    color: blue;
+} */
+/* .mainad:visited{
+    color: pink;
+} */
+.nav-link > .active > a { 
+    background-color: palevioletred ; 
+}
+.navbar-vertical .navbar-nav > .nav-item .nav-link.active {
+    color: #fff;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    /* background-color: rgb(235 54 0) !important; */
+}
+/* .tblhd{
+    right: 0% !important;
+    position: relative;
+} */
+@media (max-width: 1150px){
+    .sidenav{
+        display: none !important;
+    }
+    .navbar-collapse {
+        display: block !important;
+        position: relative;
+    }
+    .resnav{
+        margin-left: auto !important;
+       
+      }
+      .resicon i{
+        margin-left: 24px !important;
+      }
+     
+      
+}
+.g-sidenav-pinned .sidenav{
+    display: block !important;
+    width: 70%;
+}
+.mainadd1{
+    font-family:"Roboto Slab" !important;
+    font-size:large !important;
+    right: 80px !important;
+    position: relative;
+}
+
+

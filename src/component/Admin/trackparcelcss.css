@@ -1,0 +1,162 @@
+.srccon{
+    width: 50% !important;
+    /* margin-top: -105px !important; */
+}
+.srccon .search input{
+    width: 350px !important;
+}
+
+.srccon .search i{
+    position: relative;
+    right: 40px !important;
+}
+.srhbtn{
+    background-color:  rgb(235, 54, 0) ;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+}
+.srhbtn:hover{
+    color: black;
+    /* width: 200px; */
+}
+@media (max-width:800px) {
+    .container{
+        position: relative;
+        width: 90% !important;
+        display: table;
+    }
+    .container input{
+        position: relative;
+        width: 75% !important;
+    }
+   
+}
+@media (min-width:768px) and (max-width:900px) {
+    .container{
+        align-items: center;
+    }
+    
+}
+@media (min-width:425px) and (max-width:550px) {
+    .fa-search{
+        display: none;
+    }
+}
+.bo1 , .bo2 , .bo3 , .bo4{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.mainbox{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.track {
+    position: relative;
+    background-color: #ddd;
+    height: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 50px
+}
+
+.track .step {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 25%;
+    margin-top: -18px;
+    text-align: center;
+    position: relative
+}
+
+.track .step.active:before {
+    background: #FF5722
+}
+
+.track .step::before {
+    height: 7px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    top: 18px
+}
+
+.track .step.active .icon {
+    background: #ee5435;
+    color: #fff
+}
+
+.track .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    border-radius: 100%;
+    background: #ddd
+}
+
+.track .step.active .text {
+    font-weight: 400;
+    color: #000
+}
+
+.track .text {
+    display: block;
+    margin-top: 7px
+}
+@media (max-width: 1150px){
+    .sidenav{
+        display: none !important;
+    }
+    .navbar-collapse {
+        display: block !important;
+        position: relative;
+    }
+    .resnav{
+        margin-left: auto !important;
+       
+      }
+      .resicon i{
+        margin-left: 24px !important;
+      }
+     
+      
+}
+.nav-link > .active > a { 
+    background-color: palevioletred ; 
+}
+.navbar-vertical .navbar-nav > .nav-item .nav-link.active {
+    color: #fff;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    background-color: rgb(235 54 0) !important;
+}
+.tracpulogo{
+    position: relative;
+    right: 650px !important;
+    margin-top: -42px !important;
+}
+.tracktitle{
+    margin-top: -170px !important;
+    font-weight: bold;
+    font-size: 40px !important;
+    color: rgb(55, 129, 226);
+}
+.tracktitle .usertxtspan{
+    color: #f28a60;
+}
+.srccon1{
+    margin-top: -105px !important;
+    width: 4% !important;
+}
+.srccon1 .search input{
+    width: 350px !important;
+}
+
+.srccon1 .search i{
+    position: relative;
+    right: 40px !important;
+}

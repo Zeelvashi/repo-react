@@ -1,0 +1,143 @@
+body{
+    background-color: #f0f2f5 !important;
+}
+.inputstatus{
+    background-color: #f0f2f5 !important;
+    border-bottom: 3px solid gray !important;
+    width: 250px !important;
+}
+/* .navdd{
+    position:relative !important ;
+    margin-left: 85px !important;
+    margin-top: -23px !important;
+} */
+.dropdown .dropdown-toggle:after{
+    position: absolute;
+    margin-top: 7px !important;
+}
+.inputstatus:hover{
+    border-bottom: 3px solid #2bbed4 !important;
+}
+.right1{
+    margin-left: 5px !important;
+}
+.resnav{
+    margin-right: -10px!important;
+}
+.right1 i{
+    margin-right: 80px !important;   
+    font-size: 20px;
+}
+/* .right1 .i2{
+    margin-right: 105px !important;   
+} */
+.right1 .navdd{
+    margin-top: -30px !important;
+}
+.boxx1{
+    height: 110px !important;
+}
+@media (min-width:425px) and (max-width:550px) {
+    .dis1{
+        margin-top: 45px !important;
+    }
+}
+.clicon1{
+    justify-content: center !important;
+    margin-top: 4px !important;
+    padding: 5px !important;
+    font-size: 20px !important;
+    color: white !important;
+    background-color: rgb(250, 74, 29) !important;
+    border-radius: 7px !important;
+  }
+.card2{
+    height: 369px !important;
+}
+.bellicon{
+    position: relative;
+    border: none;
+    position: relative;
+    right: 10px;
+    background: none;
+    color: rgb(28, 118, 192);
+}
+.bellicon i{
+    font-size: 20px !important;
+}
+.badge1{
+    width: 16px;
+    padding: 4px;
+    border-radius: 60% !important;
+}
+.notifybadge{
+position: absolute;
+font-size: 10px;
+color: #FFF;
+background: red;
+padding: 5px;
+border-radius: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 15px;
+width: 15px;
+top: -15%;
+right: -25%;
+}
+[role=tooltip].popup-content{
+    width: 200px !important;
+}
+.paginationBttns {
+    /* width: 100%; */
+    /* height: 20px; */
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 2rem; */
+  }
+  .paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    color: #1D4979;
+    border: 2px solid #ec4b46;
+    cursor: pointer;
+  }
+  .paginationBttns a:hover {
+  /* background-color:#4074b5 ; */
+  background: linear-gradient(135deg, #d49d5e, #ec4b46);
+
+  color: white !important;
+  }
+  .paginationActive a{
+    /* background-color:#4074b5 ; */
+    background: linear-gradient(135deg, #d49d5e, #ec4b46);
+    color: white !important;
+  }
+  .pagenationbike{
+    margin-top: 40px !important;
+    /* margin-left: 30px !important; */
+  }
+  .previousBttn{
+      width: 75px !important;
+  }
+  .nextBttn{
+    width: 75px !important;
+
+  }
+  .artd{
+      height:103px !important;
+  }
+  .tparcelmain{
+      background-image: url('../../image/nparcel.avif');
+      background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  /* .historytable{
+      background-color: rgb(235, 230, 230) !important;
+  } */
+  .tblhistory{
+      background-color: transparent !important;
+  }

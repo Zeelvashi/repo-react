@@ -1,0 +1,101 @@
+.abimg{
+    width: 600px !important;
+    position: relative;
+    margin-top: 25px !important;
+}
+.abttxt{
+    margin: auto;
+    margin-top: 80px;
+    text-align: left;
+    position: relative;
+}
+.abcon{
+    margin-top: 90px !important;
+}
+.aboutimg{
+    height: 100vh !important;
+}
+.ul1{
+    margin-left: 50px !important;
+}
+.fonticon{
+    font-size: 25px !important;
+    position: relative;
+    border: none;
+    margin-left: 20px;
+    right: 10px;
+    color: white !important;
+    background-color: rgb(6, 100, 155);
+ border-radius: 50%;
+ height: 40px;
+ width: 40px;
+ padding-top: 7px !important;
+}
+.iconcolor{
+  padding: auto;
+}
+.feature img {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+    height: 50px;
+    width: 45px;
+    margin-top: 22px;
+}
+/* clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%); */
+/* clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); */
+ul{
+    list-style: none;
+}
+.feature-content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 85%;
+    text-align:left;
+}
+.titleh22 {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+     color: #222222;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.titleh221 {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-left: 35px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.st12{
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        font-weight: normal;
+        color: #ACACAC;
+        margin-top: -12px !important;
+    letter-spacing: 1px;
+}
+.st121{
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    color: #ACACAC;
+    margin-top: -12px !important;
+    letter-spacing: 1px;
+    margin-left: 35px !important;
+}
+.secondli{
+    position: relative;
+    left: 50px;
+    /* top: 133px; */
+}
+.feature i{
+    height: 100px !important;
+}
+.thirdli{
+    position: relative;
+    top: 60px;
+left: 50px;
+}

@@ -1,0 +1,174 @@
+.staffmain{
+    background-color: rgb(34, 33, 33) !important;
+    height: 500px !important;
+    width: 100% !important;
+}
+.courierlogo{
+    width: 250px;
+    height: 220px;
+    margin-top: -34px;
+    margin-left: -50px !important;
+}
+.rightside .stafflo{
+    color: white !important;
+}
+.staffuser{
+    color: white !important;
+}
+.stafflo{
+    margin-top: -11px !important;
+}
+.knztitle{
+    color: #6afa3eea;
+}
+.stitle{
+    margin-top: 60px !important;
+}
+.stitle .hh3{
+    color: yellow !important;
+}
+.cdcourier{
+    margin-top: 78px;
+    height: 160px !important;
+}
+.cdcourier1{
+    margin-top: 78px;
+}
+.cardh31{
+    color: black;
+}
+
+ .cardh3{
+     color: black;
+     margin-top: 10%;
+ } 
+ .courierbg{
+     width: 600px;
+     height: 400px;
+ }
+ .cardbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large !important;
+    border: none !important;
+    /* background-color:  rgb(196, 42, 4);
+    color: rgb(238, 238, 127); */
+    background-color: rgb(165, 165, 30);
+    color:  rgb(196, 42, 4);
+    width: 200px !important;
+    font-weight: bold;
+    margin-left: 400px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    height: 60px !important;
+ }
+ .cardbtn1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large !important;
+    border: none !important;
+    /* background-color:  rgb(196, 42, 4);
+    color: rgb(238, 238, 127); */
+    background-color: rgb(165, 165, 30);
+    color:  rgb(196, 42, 4);
+    width: 200px !important;
+    font-weight: bold;
+    margin-right: 400px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    height: 60px !important;
+ }
+ .cardbtn:hover{
+    letter-spacing: 1px;
+    background-color: rgb(214, 214, 68);
+ }
+ .cardbtn1:hover{
+    letter-spacing: 1px;
+    background-color: rgb(214, 214, 68);
+ }
+ .b1 span{
+    display: inline-block !important;
+    border: 2px solid orangered;
+    height: 45px !important;
+    width: 45px !important;
+    margin: auto !important;
+   
+}
+.n1{
+    margin-top: 8px !important;
+    color: orangered;
+    font-weight:500 !important;
+}
+.historytable{
+    width: 180% !important;
+}
+.textpmain{
+    margin-top: -20px !important;
+}
+.textpmain .textp1{
+    font-size: 28px !important;
+    color: #a5f38dea;
+    font-weight: bold !important;
+}
+.textpmain .textp2{
+    font-size: 31px !important;
+    margin-top: -12px !important;
+    color: #40f00bea;
+    font-weight: bolder !important;
+}
+.tncmain{
+    margin-top: 120px !important;
+    background-color: #682115;
+    width: 100% !important;
+    color: white !important;
+    font-size: 18px !important;
+}
+.tncmain h3{
+   color: rgb(185, 185, 162) !important;
+}
+.tncimg{
+   margin-top: 230px !important;
+}
+.staffupdatebtn{
+    border: none;
+    width: 110% !important;
+    border-radius: 5px;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: black;
+    color: rgb(213, 218, 217);
+}
+
+
+
+/* //cahng pass */
+.forgotpass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../image/fpimg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fpmain{
+    background-color: rgb(207, 220, 223);
+}
+.fpfrm::placeholder{
+    color: black;
+}
+
+/* new parcel */
+
+.nparcelmain{
+    background-image: url('../image//nparcel.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.tblnparcel{
+    margin-top: 90px !important;
+}

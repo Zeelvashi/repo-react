@@ -1,0 +1,65 @@
+.wrapper1 {
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .formContent{
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(104, 99, 99, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(110, 109, 109, 0.3);
+    text-align: center;
+  }
+  .branchchangepass{
+    background-image: url('../image/chngpss.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .formContent{
+/* background-color: rgb(32, 48, 61); */
+/* background-color: transparent; */
+background-color: rgb(2, 29, 78);
+  }
+  .formContent h3{
+    color: white !important;
+  }
+  .log1{
+    border: none !important;
+    border: 2px solid #fff !important;
+    background-color: transparent !important;
+  }
+  .log1::placeholder{
+    color: white !important;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .cpbtn{
+    width: 250px !important;
+    height: 40px !important;
+    text-align: center;
+    border: none;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+  .cpbtnbranch{
+    width: 250px !important;
+    height: 40px !important;
+    text-align: center;
+    border: none;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 2px;
+  }

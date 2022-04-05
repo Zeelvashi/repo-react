@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.stfmain{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 89vh;
+  background: #232427;
+  margin-top: -165px !important;
+}
+.logostf{
+    background-color:#232427 ;
+    display: flex;
+}
+.stflogo{
+    position: relative;
+    top:-50px;
+    height: 240px;
+}
+.stflogout{
+    position: relative;
+    left: 75%;
+    margin-top: -1px;
+    font-size: 20px !important;
+    color: white !important;
+}
+.stflogout .nav-link{
+    color: #fff !important;
+}
+.stflogout .nav-link::after{
+    position: absolute;
+    margin-top: 11px !important;
+}
+.bell{
+  position: relative;
+  left: 76% !important;
+  margin-top: 12px !important;
+}
+.stfuser{
+    position: relative;
+    color: #fff !important;
+    left: 76%;
+    margin-top: 13px;
+    font-size: 18px;
+}
+
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background: #232427;
+} */
+ .stfcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-top: -120px;
+  /* margin: 40px 0; */
+}
+
+.stfcon .stfcard {
+  position: relative;
+  background-color: #232427 !important;
+  min-width: 320px;
+  height: 440px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+  transition: 0.5s;
+}
+
+.stfcon .stfcard:nth-child(1) .box .content label {
+  /* color: #2196f3; */
+  color: rgb(224, 116, 77);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.stfcon .stfcard .new1{
+  background: #e91e63;
+  font-size: 20px;
+}
+
+.stfcon .stfcard .new2 {
+  background: #23c186;
+  font-size: 20px;
+}
+
+.stfcon .stfcard .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #2a2b2f;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.stfcon .stfcard .box:hover {
+  transform: translateY(-50px);
+}
+
+.stfcon .stfcard .box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.stfcon .stfcard .box .content {
+  padding: 18px;
+  text-align: center;
+}
+
+.stfcon .stfcard .box .content h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.stfcon .stfcard .box .content h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  z-index: 1;
+  transition: 0.5s;
+  margin-bottom: 15px;
+}
+
+.stfcon .stfcard .box .content p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  transition: 0.5s;
+  line-height: 0.625;
+}
+
+.stfcon .stfcard .box .content a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  /* background: black; */
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+.stfcon .stfcard .box .content a:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  background: #fff;
+  color: #000;
+}
+.terms{
+  text-align: left;
+  /* color: rgb(255, 155, 118); */
+  /* font-size: 13px; */
+  color: #79dcfa;
+}
+/* @media (max-width:320px) {
+    .stfuser{
+        position: relative;
+        left: 25% !important;
+    }
+    .stflogout{
+        position: relative;
+        left: 25% !important;
+    }
+    .stfh4{
+        margin-top: 160px !important;
+    }
+    .stfcon{
+        margin-top: 5px !important;
+    }
+    .stflogo{
+      position: relative;
+      left: -20px;
+      top:-24px;
+      height: 130px;
+  }
+} */
+ @media (min-width:320px) and (max-width:600px) {
+  .stfuser{
+      position: relative;
+      left: 23% !important;
+  }
+  .stflogout{
+      position: relative;
+      left: 20% !important;
+  }
+  .stfh4{
+    margin-top: 160px !important;
+  }
+.stfcon{
+    margin-top: 5px !important;
+  }
+.stflogo{
+  position: relative;
+  left: -20px;
+  top:-24px;
+  height: 130px;
+  }
+.bell{
+  position: relative;
+  left: 25% !important;
+  margin-top: 12px !important;
+}
+
+} 

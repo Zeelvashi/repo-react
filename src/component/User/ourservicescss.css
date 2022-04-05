@@ -1,0 +1,21 @@
+.servicesmain{
+  z-index: 1 !important;
+  overflow: hidden;
+}
+.service1{
+  z-index: 1 !important;
+  overflow: hidden;
+}
+.bottomright {
+    position: absolute;
+    bottom: 8px;
+    right: 100px;
+    font-size: 22px;
+    color: white !important;
+    font-weight: bold;
+  }
+.bgmethod{
+    background-color: rgb(213, 215, 218) !important;
+    /* background-color: rgb(192, 199, 201); */
+    height: auto !important;
+}

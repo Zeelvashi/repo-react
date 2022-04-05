@@ -1,0 +1,91 @@
+.view .viewbtn{
+    margin-top: -120px !important;
+    border: none !important;
+    background-color: white !important;
+}
+.viewbtn b{
+    position: relative !important;
+    top: -10px !important;
+}
+.viewbtn b:hover{
+    text-decoration: underline !important;
+}
+.table .tbltr{
+    border-left: 5px solid orangered !important;
+}
+
+
+.pannel1{
+    border: 3px solid rgb(37, 34, 34) !important;
+    margin-top: 45px !important;
+    height: 55px !important;
+    border-left: 5px solid orangered !important;
+    border-radius: 5px !important;
+    position: relative;
+    left: -23px !important;
+}
+.pannel1 .reportbtn{
+    border: none !important;
+   position: relative !important;
+   left: -80px !important;
+   margin-top: 12px !important;
+   font-size: large;
+   color: rgb(184, 66, 23);
+}
+.pannel1 .reportbtn:hover{
+    text-decoration: underline !important;
+    color: rgb(114, 43, 18);
+}
+.pannel1 .reportbtn12{
+    border: none !important;
+    position: relative !important;
+    left:-70px !important;
+    margin-top: 12px !important;
+    font-size: large;
+    color: rgb(184, 66, 23);
+ } 
+ .pannel1 .reportbtn1{
+    border: none !important;
+    position: relative !important;
+    left:-82px !important;
+    margin-top: 12px !important;
+    font-size: large;
+    color: rgb(184, 66, 23);
+ }   
+.pannel1 .reportbtn12:hover{
+    text-decoration: underline !important;
+    color: rgb(114, 43, 18);
+}
+ /* .pannel12{
+    position: relative !important;
+    left: -400px !important;
+}  */
+.rbtn{
+    border: none;
+    /* background-color: rgb(129 132 137); */
+    background: linear-gradient(135deg, #d49d5e, #ec4b46);
+    color: black;
+    border-radius: 6px;
+    width: 40%;
+    height: 30px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+.select1{
+    margin-top: 11px;
+    height: 30px;
+}
+.option1{
+    
+    color: black;
+    height: 28px;
+    border-color: #ec4b46 !important;
+    border-radius: 5px 5px 5px 5px;
+}
+.date1{
+   
+    margin-top: 12px;
+    height: 28px;
+    border-color: #ec4b46 !important;
+    border-radius: 5px 5px 5px 5px;
+}

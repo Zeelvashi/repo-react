@@ -1,0 +1,150 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+/* .utmain{
+    background-image: url('../image/s2.jpg');
+    max-height: 100vh !important;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+} */
+.srccon1{
+    width: 50% !important;
+    margin-top: 150px !important;
+}
+.srccon1 .search input{
+    width: 350px !important;
+}
+.srccon1 .search i{
+    position: relative;
+    right: 40px !important;
+}
+.srhbtn{
+    background-color:  rgb(235, 54, 0) ;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+}
+.srhbtn:hover{
+    color: black;
+    /* width: 200px; */
+}
+@media (max-width:800px) {
+    .container{
+        position: relative;
+        width: 90% !important;
+        display: table;
+    }
+    .container input{
+        position: relative;
+        width: 75% !important;
+    }
+}
+@media (min-width:768px) and (max-width:900px) {
+    .container{
+        align-items: center;
+    }
+}
+@media (min-width:425px) and (max-width:550px) {
+    .fa-search{
+        display: none;
+    }
+}
+.mainbox .bo1 , .bo2 , .bo3 , .bo4{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    font-size: 17px !important;
+}
+.mainbox{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media (max-width: 1150px){
+    .sidenav{
+        display: none !important;
+    }
+    .navbar-collapse {
+        display: block !important;
+        position: relative;
+    }
+    .resnav{
+        margin-left: auto !important;
+      }
+      .resicon i{
+        margin-left: 24px !important;
+      }
+}
+.nav-link > .active > a {
+    background-color: palevioletred ;
+}
+.navbar-vertical .navbar-nav > .nav-item .nav-link.active {
+    color: #fff;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    background-color: rgb(235 54 0) !important;
+}
+.tracpulogo{
+    position: relative;
+    right: 650px !important;
+    margin-top: -42px !important;
+}
+.tracktitle{
+    margin-top: -170px !important;
+    font-weight: bold;
+    font-size: 40px !important;
+    color: rgb(55, 129, 226);
+}
+.tracktitle .usertxtspan{
+    color: #F28A60;
+}
+.srccon1{
+    /* margin-top: -105px !important; */
+    width: 43% !important;
+    background-color: #F5F5F5 !important;
+}
+.srccon1 .search input{
+    width: 350px !important;
+}
+.srccon1 .search i{
+    position: relative;
+    right: 40px !important;
+}
+.tracksearch{
+    background-color: rgb(7, 7, 7) !important;
+    border: none !important;
+    border-bottom: 3px solid white !important;
+    color: white !important;
+    width:  20% !important;
+}
+.capspan{
+    color: #F52D06 !important;
+    /* border: 2px solid rgb(121, 119, 119) ; */
+    width: 150px;
+    height: 35px !important;
+    display: inline-block;
+    font-size: x-large;
+    font-weight: bolder !important;
+    padding: 3px;
+    letter-spacing: 6px;
+    /* left: 140px; */
+    position: relative;
+}
+#capinput{
+    position: relative;
+    left: -50px !important;
+    border: 2px solid black;
+    width: 240px !important;
+}
+.capbtn{
+    left: 200px !important;
+    position: relative;
+    margin-top: -80px !important;
+    background: rgb(221, 93, 46) !important;
+    color: white;
+}
+.cap1{
+    background-image: url('../image/captcha-bg.png');
+    border: 2px solid black !important;
+    color: blue !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
