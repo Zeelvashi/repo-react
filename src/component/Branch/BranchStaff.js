@@ -20,7 +20,7 @@ const BranchStaff = () => {
     const [username, setusername] = useState([])
 
     useEffect(() => {
-        Axios.get("${process.env.LIVE_NODE}/bloggedin", { headers: { 'authorization': getToken } })
+        Axios.get(`${process.env.LIVE_NODE}/bloggedin`, { headers: { 'authorization': getToken } })
             .then((res) => {
                 console.log('bst bnm is', res.data.userValid.branchname);
                 setbranchname(res.data.userValid.branchname);

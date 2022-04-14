@@ -35,7 +35,7 @@ const Addbranch = () => {
         e.preventDefault();
         const { branchname, branchaddress, branchcontactnumber, branchemail, city, zipcode } = user;
         const branchdata = { branchname, branchaddress, branchcontactnumber, branchemail, city, zipcode }
-        Axios.post("${process.env.LIVE_NODE}/addbranch", branchdata)
+        Axios.post(`${process.env.LIVE_NODE}/addbranch`, branchdata)
             .then((res) => {
                 if (res.status === 200) {
                     toast.success("Data Added Successfully..", { autoClose: 1000 }

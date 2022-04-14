@@ -34,16 +34,16 @@ const ReportDetail = () => {
 
     useEffect(() => {
         if (getToken) {
-            Axios.get("${process.env.LIVE_NODE}/loggedin", { headers: { 'authorization': getToken } })
+            Axios.get(`${process.env.LIVE_NODE}/loggedin`, { headers: { 'authorization': getToken } })
                 .then((res) => {
                     console.log('first res', res.data.userValid.username);
                     setuser(res.data.userValid.username);
-                    Axios.get("${process.env.LIVE_NODE}/comment")
+                    Axios.get(`${process.env.LIVE_NODE}/comment`)
                         .then((res) => {
                             setdata(res.data.commentData);
                             console.log('data', res.data.commentData);
                         })
-                    Axios.get("${process.env.LIVE_NODE}/branchinfo")
+                    Axios.get(`${process.env.LIVE_NODE}/branchinfo`)
                         .then((res) => {
                             console.log('hgjb', res.data.branchData.branchname);
                             const Data = res.data.branchData
@@ -63,7 +63,7 @@ const ReportDetail = () => {
                     onClick: () => {
                         Axios.delete(`${process.env.LIVE_NODE}/deleteUserData/${id}`)
                             .then((res) => {
-                                Axios.get("${process.env.LIVE_NODE}/comment")
+                                Axios.get(`${process.env.LIVE_NODE}/comment`)
                                     .then((res) => {
                                         setdata(res.data.commentData);
                                         console.log('data', res.data.commentData);

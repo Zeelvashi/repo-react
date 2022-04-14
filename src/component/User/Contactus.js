@@ -38,7 +38,7 @@ const Contactus = () => {
 		const { firstname, lastname, contactno, email, problem, comment } = user;
 		const userdata = { firstname, lastname, contactno, email, problem, comment, rating }
 		console.log('data', userdata);
-		Axios.post("${process.env.LIVE_NODE}/addcomment", userdata)
+		Axios.post(`${process.env.LIVE_NODE}/addcomment`, userdata)
 			.then((res) => {
 				if (res.status === 200) {
 					toast.success("Data Added Successfully..", { autoClose: 1000 }

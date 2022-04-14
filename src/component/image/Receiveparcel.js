@@ -34,7 +34,7 @@ const Receiveparcel = () => {
   
   useEffect(() => {
     if (getBranchToken) {
-      Axios.get("${process.env.LIVE_NODE}/branchloggedin", { headers: { 'authorization': getBranchToken } })
+      Axios.get(`${process.env.LIVE_NODE}/branchloggedin`, { headers: { 'authorization': getBranchToken } })
         .then((res) => {
 
           setusername(res.data.userValid.username);

@@ -21,7 +21,7 @@ const StaffHome = () => {
 
 
     useEffect(() => {
-        Axios.get("${process.env.LIVE_NODE}/sloggedin", {
+        Axios.get(`${process.env.LIVE_NODE}/sloggedin`, {
             headers: { authorization: getstaffToken },
         }).then((res) => {
             setusername(res.data.userValid.username);

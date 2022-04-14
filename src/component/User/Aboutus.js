@@ -12,7 +12,7 @@ const Aboutus = () => {
     const [Data, SetData] = useState([]);
 
     useEffect(() => {
-        Axios.get("${process.env.LIVE_NODE}/branchinfo")
+        Axios.get(`${process.env.LIVE_NODE}/branchinfo`)
             .then((res) => {
                 SetData(res.data.branchData);
             })

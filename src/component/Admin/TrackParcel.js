@@ -19,7 +19,7 @@ const TrackParcel = () => {
 
     useEffect(() => {
         if (getToken) {
-            Axios.get("${process.env.LIVE_NODE}/loggedin", { headers: { 'authorization': getToken } })
+            Axios.get(`${process.env.LIVE_NODE}/loggedin`, { headers: { 'authorization': getToken } })
                 .then((res) => {
                     setusername(res.data.userValid.username);
                 })

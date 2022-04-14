@@ -30,7 +30,7 @@ const AddBranchStaff = () => {
     }
     useEffect(() => {
        if(getToken){
-           Axios.get("${process.env.LIVE_NODE}/bloggedin", { headers: { 'authorization': getToken } })
+           Axios.get(`${process.env.LIVE_NODE}/bloggedin`, { headers: { 'authorization': getToken } })
             .then((res) => {
                 const branchname = res.data.userValid.branchname
                 setbranchname(res.data.userValid.branchname);
@@ -41,7 +41,7 @@ const AddBranchStaff = () => {
         e.preventDefault();
         const { staffname, staffemail, branchname, staffaddress, city, contactnumber } = staff;
         const staffdata = { staffname, staffemail, branchname, staffaddress, city, contactnumber }
-        Axios.post("${process.env.LIVE_NODE}/addstaff", staffdata)
+        Axios.post(`${process.env.LIVE_NODE}/addstaff`, staffdata)
             .then((res) => {
                 if (res.status === 200) {
                     toast.success("Data Added Successfully..", { autoClose: 1000 }

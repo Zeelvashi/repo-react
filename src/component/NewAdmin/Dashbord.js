@@ -22,11 +22,11 @@ const Demo = () => {
 
     useEffect(() => {
         if (getToken) {
-            Axios.get("${process.env.LIVE_NODE}/loggedin", { headers: { 'authorization': getToken } })
+            Axios.get(`${process.env.LIVE_NODE}/loggedin`, { headers: { 'authorization': getToken } })
                 .then((res) => {
                     console.log('first res', res.data.userValid.username);
                     setuser(res.data.userValid.username);
-                    Axios.get("${process.env.LIVE_NODE}/branchinfo")
+                    Axios.get(`${process.env.LIVE_NODE}/branchinfo`)
                         .then((res) => {
                             const data = res.data.branchData;
                             console.log(data);

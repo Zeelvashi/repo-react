@@ -38,7 +38,7 @@ const BranchReport = () => {
     useEffect(() => {
         if (getToken) {
             setbdate(" ")
-            Axios.get("${process.env.LIVE_NODE}/bloggedin", { headers: { 'authorization': getToken } })
+            Axios.get(`${process.env.LIVE_NODE}/bloggedin`, { headers: { 'authorization': getToken } })
                 .then((res) => {
                     setusername(res.data.userValid.username);
                     setbranchname(res.data.userValid.branchname);

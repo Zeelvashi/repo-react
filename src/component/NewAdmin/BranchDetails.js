@@ -33,7 +33,7 @@ const SuratDetails = () => {
     const branchnm = bnm.replace(/%20/g, " ");
     useEffect(() => {
         if (getToken) {
-            Axios.get("${process.env.LIVE_NODE}/loggedin", { headers: { 'authorization': getToken } })
+            Axios.get(`${process.env.LIVE_NODE}/loggedin`, { headers: { 'authorization': getToken } })
                 .then((res) => {
                     console.log('first res', res.data.userValid);
                     setuser(res.data.userValid.username);

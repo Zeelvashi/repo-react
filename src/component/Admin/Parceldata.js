@@ -25,10 +25,10 @@ const Parceldata = () => {
     const [username,setusername]=useState()
 
     useEffect(() => {
-        Axios.get("${process.env.LIVE_NODE}/loggedin", { headers: { 'authorization': getToken } })
+        Axios.get(`${process.env.LIVE_NODE}/loggedin`, { headers: { 'authorization': getToken } })
             .then((res) => {
                 setusername(res.data.userValid.username);
-                Axios.get("${process.env.LIVE_NODE}/parcelinfo")
+                Axios.get(`${process.env.LIVE_NODE}/parcelinfo`)
                     .then((res) => {
                         SetData(res.data.ParcelData);
                     })
@@ -46,7 +46,7 @@ const Parceldata = () => {
                     onClick: () => {
                         Axios.delete(`${process.env.LIVE_NODE}/deleteparceldata/${id}`)
                             .then((res) => {
-                                Axios.get("${process.env.LIVE_NODE}/parcelinfo")
+                                Axios.get(`${process.env.LIVE_NODE}/parcelinfo`)
                                     .then((res) => {
                                         SetData(res.data.ParcelData);
                                     })
@@ -72,7 +72,7 @@ const Parceldata = () => {
         console.log("It Clicked", pstatus);
         Axios.put(`${process.env.LIVE_NODE}/updateparcelstatus/${id}`, pstatus)
             .then((res) => {
-                Axios.get("${process.env.LIVE_NODE}/parcelinfo")
+                Axios.get(`${process.env.LIVE_NODE}/parcelinfo`)
                     .then((res) => {
                         SetData(res.data.ParcelData);
                     })
