@@ -2,7 +2,7 @@ import React from 'react';
 import Dashboard from './Dashboard';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Axios from "axios";
 import './table.css';
@@ -22,10 +22,10 @@ const Branchstaff = () => {
     const [username,setusername]=useState();
 
     useEffect(() => {
-        Axios.get("http://localhost:8000/loggedin", { headers: { 'authorization': getToken } })
+        Axios.get("${process.env.LIVE_NODE}/loggedin", { headers: { 'authorization': getToken } })
             .then((res) => {
                 setusername(res.data.userValid.username);
-                Axios.get("http://localhost:8000/staffinfo")
+                Axios.get("${process.env.LIVE_NODE}/staffinfo")
                     .then((res) => {
                         SetData(res.data.staffData);
                     })
@@ -40,9 +40,9 @@ const Branchstaff = () => {
                 {
                     label: 'Yes',
                     onClick: () => {
-                        Axios.delete(`http://localhost:8000/deleteStaffData/${id}`)
+                        Axios.delete(`${process.env.LIVE_NODE}/deleteStaffData/${id}`)
                             .then((res) => {
-                                Axios.get("http://localhost:8000/staffinfo")
+                                Axios.get("${process.env.LIVE_NODE}/staffinfo")
                                     .then((res) => {
                                         SetData(res.data.staffData);
                                     })

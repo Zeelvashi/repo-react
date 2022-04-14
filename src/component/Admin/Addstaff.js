@@ -33,7 +33,7 @@
 //         })
 //     }
 //     useEffect(() => {
-//          Axios.get("http://localhost:8000/branchinfo")
+//          Axios.get("${process.env.LIVE_NODE}/branchinfo")
 //             .then((res) => {
 //                 const fdata=res.data.branchData;        
 //                SetData(fdata);
@@ -43,7 +43,7 @@
 //         e.preventDefault();
 //         const { staffname,staffemail,branchname,staffaddress,city,contactnumber } = staff;
 //         const staffdata = { staffname,staffemail,branchname,staffaddress,city,contactnumber }
-//         Axios.post("http://localhost:8000/addstaff", staffdata)
+//         Axios.post("${process.env.LIVE_NODE}/addstaff", staffdata)
 //             .then((res) => {
 //                 if (res.status === 200) {
 //                     toast.success("Data Added Successfully..", { autoClose: 1000 }
@@ -73,7 +73,7 @@
 
 //     useEffect(() => {
 //         if (id) {
-//             Axios.get(`http://localhost:8000/staffdata/${id}`)
+//             Axios.get(`${process.env.LIVE_NODE}/staffdata/${id}`)
 //                 .then((res) => {
 //                     console.log("data:", res.data.staffData)
 //                     setstaff(res.data.staffData)
@@ -86,7 +86,7 @@
 //         e.preventDefault();
 //         const { staffname,staffemail,branchname,staffaddress,city,contactnumber } = staff;
 //         const staffdata = { staffname,staffemail,branchname,staffaddress,city,contactnumber };
-//         Axios.put(`http://localhost:8000/updateStaffData/${id}`, staffdata)
+//         Axios.put(`${process.env.LIVE_NODE}/updateStaffData/${id}`, staffdata)
 //             .then((res) => {
 //                 if (res.status === 200) {
 //                     toast.success("Updated Successfully..", { autoClose: 1000 }

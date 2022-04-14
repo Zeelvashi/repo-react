@@ -20,13 +20,13 @@ const BranchStaff = () => {
     const [username, setusername] = useState([])
 
     useEffect(() => {
-        Axios.get("http://localhost:8000/bloggedin", { headers: { 'authorization': getToken } })
+        Axios.get("${process.env.LIVE_NODE}/bloggedin", { headers: { 'authorization': getToken } })
             .then((res) => {
                 console.log('bst bnm is', res.data.userValid.branchname);
                 setbranchname(res.data.userValid.branchname);
                 setusername(res.data.userValid.username);
                 const branchname = res.data.userValid.branchname
-                Axios.get(`http://localhost:8000/branchparceldata/${branchname}`)
+                Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
                     .then((res) => {
                         console.log('stf data', res.data.stfdata);
                         setdata(res.data.stfdata);
@@ -48,9 +48,9 @@ const BranchStaff = () => {
                 {
                     label: 'Yes',
                     onClick: () => {
-                        Axios.delete(`http://localhost:8000/deleteStaffData/${id}`)
+                        Axios.delete(`${process.env.LIVE_NODE}/deleteStaffData/${id}`)
                             .then((res) => {
-                                Axios.get(`http://localhost:8000/branchparceldata/${branchname}`)
+                                Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
                                     .then((res) => {
                                         setdata(res.data.stfdata);
                                     })

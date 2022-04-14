@@ -20,7 +20,7 @@ const Login = () => {
         console.log("pas:", password);
         
         e.preventDefault();
-        Axios.post("http://localhost:8000/login", { username, password })
+        Axios.post("${process.env.LIVE_NODE}/login", { username, password })
             .then((res) => {
                 console.log("status:",res);
                 if(res.status === 200) {

@@ -7,7 +7,7 @@ import './ratcss.css'
 const Review = () => {
     const [data, setdata] = useState([]);
     useEffect(() => {
-        Axios.get("http://localhost:8000/comment")
+        Axios.get("${process.env.LIVE_NODE}/comment")
             .then((res) => {
                 setdata(res.data.commentData)
                 console.log('data', res.data.commentData);

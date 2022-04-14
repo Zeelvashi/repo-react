@@ -25,14 +25,14 @@ const Newparcel = () => {
     const [parcelstatus, setparcelstatus] = useState([]);
     useEffect(() => {
         if (getstaffToken) {
-            Axios.get("http://localhost:8000/sloggedin", {
+            Axios.get("${process.env.LIVE_NODE}/sloggedin", {
                 headers: { authorization: getstaffToken },
             }).then((res) => {
                 setusername(res.data.userValid.username);
                 setstaffname(res.data.userValid.staffname)
                 console.log("data:", res.data.userValid.staffname)
                 const username = res.data.userValid.staffname;
-                Axios.get(`http://localhost:8000/staffparceldata/${username}`)
+                Axios.get(`${process.env.LIVE_NODE}/staffparceldata/${username}`)
                     .then((res) => {
                         console.log("d:", res.data.staffdata)
                         setdata(res.data.staffdata);
@@ -55,10 +55,10 @@ const Newparcel = () => {
 
         }
         console.log("pstatus", { branchparcelstatus })
-        Axios.put(`http://localhost:8000/updatestaffparcelstatus/${id}`, { branchparcelstatus })
+        Axios.put(`${process.env.LIVE_NODE}/updatestaffparcelstatus/${id}`, { branchparcelstatus })
             .then((res) => {
                 const username = staffname
-                Axios.get(`http://localhost:8000/staffparceldata/${username}`)
+                Axios.get(`${process.env.LIVE_NODE}/staffparceldata/${username}`)
                     .then((res) => {
                         console.log("d:", res.data.staffdata)
                         setdata(res.data.staffdata);

@@ -19,7 +19,7 @@ const StaffLogin = () => {
 
     const login = (e) => {
         e.preventDefault();
-        Axios.post("http://localhost:8000/stafflogin", { username, password })
+        Axios.post("${process.env.LIVE_NODE}/stafflogin", { username, password })
             .then((res) => {
                 if(res.status === 200) {
                     navigate('/staffhome');

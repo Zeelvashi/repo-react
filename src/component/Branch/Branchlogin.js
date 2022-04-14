@@ -17,7 +17,7 @@ const Branch = () => {
 
     const login = (e) => {
         e.preventDefault();
-        Axios.post("http://localhost:8000/branchlogin", { username, password })
+        Axios.post("${process.env.LIVE_NODE}/branchlogin", { username, password })
             .then((res) => {
                 if (res.status === 200) {
                     navigate('/branchinfo');

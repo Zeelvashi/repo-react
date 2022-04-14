@@ -37,13 +37,13 @@ const PendingParcel = () => {
 
     useEffect(() => {
         if (getToken) {
-            Axios.get("http://localhost:8000/bloggedin", { headers: { 'authorization': getToken } })
+            Axios.get("${process.env.LIVE_NODE}/bloggedin", { headers: { 'authorization': getToken } })
                 .then((res) => {
 
                     setusername(res.data.userValid.username);
                     setbranchname(res.data.userValid.branchname);
                     const branchname = res.data.userValid.branchname;
-                    Axios.get(`http://localhost:8000/branchparceldata/${branchname}`)
+                    Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
                         .then((res) => {
                             setData(res.data.branchinfo);
                             setbranchparcel(res.data.bdata)
@@ -96,9 +96,9 @@ const PendingParcel = () => {
         }
         let statusdata = { parcelstatus,branchparcelstatus}
 
-        Axios.put(`http://localhost:8000/updatependingparcelstatus/${id}`, statusdata)
+        Axios.put(`${process.env.LIVE_NODE}/updatependingparcelstatus/${id}`, statusdata)
             .then((res) => {
-                Axios.get(`http://localhost:8000/branchparceldata/${branchname}`)
+                Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
                     .then((res) => {
                         // setData(res.data.branchinfo);
                         // setbranchparcel(res.data.branchdata)
@@ -133,9 +133,9 @@ const PendingParcel = () => {
                 {
                     label: 'Yes',
                     onClick: () => {
-                        Axios.delete(`http://localhost:8000/deleteparceldata/${id}`)
+                        Axios.delete(`${process.env.LIVE_NODE}/deleteparceldata/${id}`)
                             .then((res) => {
-                                Axios.get(`http://localhost:8000/branchparceldata/${branchname}`)
+                                Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
                                     .then((res) => {
                                         setData(res.data.branchinfo);
                                         setbranchparcel(res.data.branchdata);

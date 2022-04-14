@@ -3,7 +3,7 @@ import Dashboard from './Dashboard';
 import { NavLink } from 'react-router-dom';
 import './addfrm.css';
 import Axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 toast.configure();
@@ -33,7 +33,7 @@ const Addparcel = () => {
 
   const [bdata, setbdata] = useState([]);
   useEffect(() => {
-    Axios.get("http://localhost:8000/branchinfo")
+    Axios.get("${process.env.LIVE_NODE}/branchinfo")
       .then((res) => {
         const fdata = res.data.branchData;
         setbdata(fdata);
@@ -70,16 +70,16 @@ const Addparcel = () => {
 
     const route = data.route;
     let rprice;
-    if (route == "By Road") {
+    if (route === "By Road") {
       rprice = 20;
     }
-    else if (route == "By Air") {
+    else if (route === "By Air") {
       rprice = 50;
     }
-    else if (route == "By Train") {
+    else if (route === "By Train") {
       rprice = 30;
     }
-    else if (route == "By Ship") {
+    else if (route === "By Ship") {
       rprice = 40;
     }
     else {
@@ -101,7 +101,7 @@ const Addparcel = () => {
       referancenumber, sendername, receivername, senderaddress, receiveraddress, sendercontactnumber,
       receivercontactnumber, senderemail, receiveremail, sendercity, receivercity, branchprocessed, pickupbranch, weight, height, width, route, price
     }
-    Axios.post("http://localhost:8000/addparcel", parceldata)
+    Axios.post("${process.env.LIVE_NODE}/addparcel", parceldata)
       .then((res) => {
         if (res.status === 200) {
           toast.success("Data Added Successfully..", { autoClose: 1000 }

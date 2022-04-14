@@ -5,21 +5,15 @@ import Axios from "axios";
 import moment, { normalizeUnits } from 'moment';
 import './Trackcss.css';
 import './usertrackcss.css'
-import { NavDropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { getToken } from '../services/getToken';
-import mainlogo1 from '../image/mainlogo.png'
 const Usertrackparcel = () => {
-    const [Data, SetData] = useState([]);
     const [show, Setshow] = useState("");
     const [ref, Setref] = useState([]);
     const [referr, Setreferr] = useState(" ");
-    const [err, setErr] = useState("");
     const [dataresult, setdataresult] = useState('');
     const [confirmcap, setconfirmcap] = useState('');
     const [isActive, setActive] = useState(false);
     const navigate = useNavigate();
-    const [username, setusername] = useState();
     const [caperror, setcaperror] = useState();
     const [captcha, setcaptcha] = useState("");
     const [parcel, setparcel] = useState({
@@ -39,7 +33,7 @@ const Usertrackparcel = () => {
     }, [])
     const setcap = () => {
         const referancenumber = ref;
-        Axios.get(`http://localhost:8000/trackparcel/${referancenumber}`)
+        Axios.get(`${process.env.LIVE_NODE}/trackparcel/${referancenumber}`)
             .then((res) => {
                 if (res.status == 400) {
                     Setreferr("Reference no. Not Exists")
@@ -67,7 +61,7 @@ const Usertrackparcel = () => {
         else {
             setcaptcha("");
             const referancenumber = ref;
-            Axios.get(`http://localhost:8000/trackparcel/${referancenumber}`)
+            Axios.get(`${process.env.LIVE_NODE}/trackparcel/${referancenumber}`)
                 .then((res) => {
                     if (res.status === 200) {
                         Setshow("show");

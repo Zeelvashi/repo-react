@@ -14,10 +14,10 @@ const Report = () => {
     const [username, setusername] = useState()
 
     useEffect(() => {
-        Axios.get("http://localhost:8000/loggedin", { headers: { 'authorization': getToken } })
+        Axios.get("${process.env.LIVE_NODE}/loggedin", { headers: { 'authorization': getToken } })
             .then((res) => {
                 setusername(res.data.userValid.username);
-                Axios.get("http://localhost:8000/comment")
+                Axios.get("${process.env.LIVE_NODE}/comment")
                     .then((res) => {
                         SetData(res.data.commentData);
                         console.log('data', res.data.commentData);

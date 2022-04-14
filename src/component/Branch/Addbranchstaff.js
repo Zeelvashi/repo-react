@@ -30,7 +30,7 @@ const AddBranchStaff = () => {
     }
     useEffect(() => {
        if(getToken){
-           Axios.get("http://localhost:8000/bloggedin", { headers: { 'authorization': getToken } })
+           Axios.get("${process.env.LIVE_NODE}/bloggedin", { headers: { 'authorization': getToken } })
             .then((res) => {
                 const branchname = res.data.userValid.branchname
                 setbranchname(res.data.userValid.branchname);
@@ -41,7 +41,7 @@ const AddBranchStaff = () => {
         e.preventDefault();
         const { staffname, staffemail, branchname, staffaddress, city, contactnumber } = staff;
         const staffdata = { staffname, staffemail, branchname, staffaddress, city, contactnumber }
-        Axios.post("http://localhost:8000/addstaff", staffdata)
+        Axios.post("${process.env.LIVE_NODE}/addstaff", staffdata)
             .then((res) => {
                 if (res.status === 200) {
                     toast.success("Data Added Successfully..", { autoClose: 1000 }
@@ -68,7 +68,7 @@ const AddBranchStaff = () => {
     const id = url.substring(url.lastIndexOf('/') + 1);
     useEffect(() => {
         if (id) {
-            Axios.get(`http://localhost:8000/editstaffdata/${id}`)
+            Axios.get(`${process.env.LIVE_NODE}/editstaffdata/${id}`)
                 .then((res) => {
                     console.log("data:", res.data.staffData)
                     setstaff(res.data.staffData)
@@ -80,7 +80,7 @@ const AddBranchStaff = () => {
         e.preventDefault();
         const { staffname, staffemail, branchname, staffaddress, city, contactnumber } = staff;
         const staffdata = { staffname, staffemail, branchname, staffaddress, city, contactnumber };
-        Axios.put(`http://localhost:8000/updateStaffData/${id}`, staffdata)
+        Axios.put(`${process.env.LIVE_NODE}/updateStaffData/${id}`, staffdata)
             .then((res) => {
                 if (res.status === 200) {
                     toast.success("Updated Successfully..", { autoClose: 1000 }

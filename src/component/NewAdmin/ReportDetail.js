@@ -34,16 +34,16 @@ const ReportDetail = () => {
 
     useEffect(() => {
         if (getToken) {
-            Axios.get("http://localhost:8000/loggedin", { headers: { 'authorization': getToken } })
+            Axios.get("${process.env.LIVE_NODE}/loggedin", { headers: { 'authorization': getToken } })
                 .then((res) => {
                     console.log('first res', res.data.userValid.username);
                     setuser(res.data.userValid.username);
-                    Axios.get("http://localhost:8000/comment")
+                    Axios.get("${process.env.LIVE_NODE}/comment")
                         .then((res) => {
                             setdata(res.data.commentData);
                             console.log('data', res.data.commentData);
                         })
-                    Axios.get("http://localhost:8000/branchinfo")
+                    Axios.get("${process.env.LIVE_NODE}/branchinfo")
                         .then((res) => {
                             console.log('hgjb', res.data.branchData.branchname);
                             const Data = res.data.branchData
@@ -61,9 +61,9 @@ const ReportDetail = () => {
                 {
                     label: 'Yes',
                     onClick: () => {
-                        Axios.delete(`http://localhost:8000/deleteUserData/${id}`)
+                        Axios.delete(`${process.env.LIVE_NODE}/deleteUserData/${id}`)
                             .then((res) => {
-                                Axios.get("http://localhost:8000/comment")
+                                Axios.get("${process.env.LIVE_NODE}/comment")
                                     .then((res) => {
                                         setdata(res.data.commentData);
                                         console.log('data', res.data.commentData);
@@ -117,7 +117,7 @@ const ReportDetail = () => {
         e.preventDefault();
         const branchname = info;
         const pdate = sdate;
-        Axios.get(`http://localhost:8000/parcedata/${branchname}`)
+        Axios.get(`${process.env.LIVE_NODE}/parcedata/${branchname}`)
             .then((res) => {
                 if (res.status === 200) {
                     Setshow("show");

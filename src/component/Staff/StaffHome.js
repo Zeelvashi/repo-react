@@ -21,12 +21,12 @@ const StaffHome = () => {
 
 
     useEffect(() => {
-        Axios.get("http://localhost:8000/sloggedin", {
+        Axios.get("${process.env.LIVE_NODE}/sloggedin", {
             headers: { authorization: getstaffToken },
         }).then((res) => {
             setusername(res.data.userValid.username);
             const username = res.data.userValid.username;
-            Axios.get(`http://localhost:8000/stfprofile/${username}`)
+            Axios.get(`${process.env.LIVE_NODE}/stfprofile/${username}`)
                 .then((res) => {
                     setdata(res.data.staffdata);
                     console.log(res.data.staffdata);
@@ -35,7 +35,7 @@ const StaffHome = () => {
             const staffname = res.data.userValid.staffname.trim();
             setstaffname(staffname)
             console.log("staffname", staffname);
-            Axios.get(`http://localhost:8000/staffnotification/${staffname}`)
+            Axios.get(`${process.env.LIVE_NODE}/staffnotification/${staffname}`)
                 .then((res) => {
                     settotal(res.data.countnotify);
                     console.log("total::", res.data.countnotify);
@@ -48,17 +48,17 @@ const StaffHome = () => {
     const clearnotify = () => {
 
         var staffnm = staffnames
-        Axios.put(`http://localhost:8000/staffclose/${staffnm}`)
+        Axios.put(`${process.env.LIVE_NODE}/staffclose/${staffnm}`)
             .then((res) => {
                 const staffname = staffnames
 
-                Axios.get(`http://localhost:8000/staffnotification/${staffname}`)
+                Axios.get(`${process.env.LIVE_NODE}/staffnotification/${staffname}`)
                     .then((res) => {
 
                         settotal(res.data.countnotify);
                         console.log("total::", res.data.countnotify);
                     })
-                // Axios.get(`http://localhost:8000/staffnotification/${staffname}`)
+                // Axios.get(`${process.env.LIVE_NODE}/staffnotification/${staffname}`)
                 //     .then((res) => {
                 //         console.log("total dataaa:", res.data.countnotify);
                 // settotal(res.data.countnotify)

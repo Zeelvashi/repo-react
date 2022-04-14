@@ -12,15 +12,14 @@ const TrackParcel = () => {
     const [Data, SetData] = useState([]);
     const [show, Setshow] = useState("");
     const [ref, Setref] = useState([]);
-    const [num, setnum] = useState({});
-    const [nodata, setnodata] = useState(false);
+    
     const [isActive, setActive] = useState("false");
     const navigate = useNavigate();
     const [username,setusername]=useState()
 
     useEffect(() => {
         if (getToken) {
-            Axios.get("http://localhost:8000/loggedin", { headers: { 'authorization': getToken } })
+            Axios.get("${process.env.LIVE_NODE}/loggedin", { headers: { 'authorization': getToken } })
                 .then((res) => {
                     setusername(res.data.userValid.username);
                 })
@@ -30,7 +29,7 @@ const TrackParcel = () => {
     const handlesearch = (e) => {
         e.preventDefault();
         const referancenumber = ref;
-        Axios.get(`http://localhost:8000/parcedata/${referancenumber}`)
+        Axios.get(`${process.env.LIVE_NODE}/parcedata/${referancenumber}`)
             .then((res) => {
                 if (res.status === 200) {
                     Setshow("show");

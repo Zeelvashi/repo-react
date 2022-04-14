@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Axios from "axios";
-import { Button, NavDropdown } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
+import {NavDropdown } from 'react-bootstrap';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Branchdash } from './Branchdash'
 import '../Admin/addfrm.css'
@@ -34,19 +34,20 @@ const AddBranchParcel = () => {
   })
 
   const [username, setusername] = useState();
-  const [branchname, setbranchname] = useState()
+  // const [branchname, setbranchname] = useState()
   const navigate = useNavigate();
   const [bdata, setbdata] = useState([])
+  const [branchname, setbranchname] = useState([])
 
   useEffect(() => {
     if (getToken) {
-      Axios.get("http://localhost:8000/bloggedin", { headers: { 'authorization': getToken } })
+      Axios.get("${process.env.LIVE_NODE}/bloggedin", { headers: { 'authorization': getToken } })
         .then((res) => {
 
           setusername(res.data.userValid.username);
           setbranchname(res.data.userValid.branchname);
-          const branchname = res.data.userValid.branchname;
-          Axios.get("http://localhost:8000/branchinfo")
+          // const branchname = res.data.userValid.branchname;
+          Axios.get("${process.env.LIVE_NODE}/branchinfo")
             .then((res) => {
               const fdata = res.data.branchData;
               setbdata(fdata);
@@ -84,16 +85,16 @@ const AddBranchParcel = () => {
     }
     const route = data.route;
     let rprice;
-    if (route == "By Road") {
+    if (route === "By Road") {
       rprice = 20;
     }
-    else if (route == "By Air") {
+    else if (route === "By Air") {
       rprice = 50;
     }
-    else if (route == "By Train") {
+    else if (route === "By Train") {
       rprice = 30;
     }
-    else if (route == "By Ship") {
+    else if (route === "By Ship") {
       rprice = 40;
     }
     else {
@@ -112,7 +113,7 @@ const AddBranchParcel = () => {
       referancenumber, sendername, receivername, senderaddress, receiveraddress, sendercontactnumber,
       receivercontactnumber, senderemail, receiveremail, sendercity, receivercity, branchprocessed, pickupbranch, weight, height, width, route, price
     }
-    Axios.post("http://localhost:8000/addparcel", parceldata)
+    Axios.post("${process.env.LIVE_NODE}/addparcel", parceldata)
       .then((res) => {
         if (res.status === 200) {
           toast.success("Data Added Successfully..", { autoClose: 1000 }
@@ -173,7 +174,7 @@ const AddBranchParcel = () => {
   const validation = () => {
     const err = {};
     let isValid = true;
-    if (!data.sendername || data.sendername == " ") {
+    if (!data.sendername || data.sendername === " ") {
       err.sendername = "Field Can-Not Be Empty";
       isValid = false;
     }
@@ -244,7 +245,7 @@ const AddBranchParcel = () => {
       isValid = false;
     }
     else if (typeof data.senderemail !== "undefined") {
-      if (!data.senderemail.match('[a-z0-9]+@[a-z]+\.[a-z]{2,3}')) {
+      if (!data.senderemail.match('[a-z0-9]+@[a-z]+[a-z]{2,3}')) {
         err.senderemail = "Enter Email in Proper Format";
         isValid = false;
       }
@@ -292,15 +293,15 @@ const AddBranchParcel = () => {
       err.weight = "Field Can-Not Be Empty";
       isValid = false;
     }
-    if (data.branchprocessed == " ") {
+    if (data.branchprocessed === " ") {
       err.branchprocessed = "Field Can-Not Be Empty";
       isValid = false;
     }
-    if (data.pickupbranch == " ") {
+    if (data.pickupbranch === " ") {
       err.pickupbranch = "Field Can-Not Be Empty";
       isValid = false;
     }
-    if (data.route == " ") {
+    if (data.route === " ") {
       err.route = "Field Can-Not Be Empty";
       isValid = false;
     }
@@ -347,7 +348,7 @@ const AddBranchParcel = () => {
                   </span>
                 </li>
                 <li className="nav-item d-xl-none ps-3 d-flex align-items-center">
-                  <NavLink to="javascript:;" className="nav-link text-body p-0" id="iconNavbarSidenav">
+                  <NavLink to="" className="nav-link text-body p-0" id="iconNavbarSidenav">
                     <div className="sidenav-toggler-inner">
                       <i className="sidenav-toggler-line"></i>
                       <i className="sidenav-toggler-line"></i>
@@ -440,6 +441,7 @@ const AddBranchParcel = () => {
                     <span className="details" style={{position:"relative"}}>Destination Branch<span style={{color:"red", position:"absolute",fontSize:"16px",marginLeft:"5px"}}>  *</span></span>
                       <select className="form-select" aria-label="Default select example" name='pickupbranch' value={data.pickupbranch} onChange={(e) => handlechange(e)}>
                       <option value=" ">Select Branch Name</option>
+                      {console.log('ghgh',bdata)}
                         {
                           bdata.map((item) =>
                             <option value={item.branchname}>{item.branchname}</option>

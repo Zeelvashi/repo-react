@@ -37,13 +37,13 @@ function Viewparcel() {
 
   useEffect(() => {
     if (getBranchToken) {
-      Axios.get("http://localhost:8000/branchloggedin", { headers: { 'authorization': getBranchToken } })
+      Axios.get("${process.env.LIVE_NODE}/branchloggedin", { headers: { 'authorization': getBranchToken } })
         .then((res) => {
 
           setusername(res.data.userValid.username);
           setbranchname(res.data.userValid.branchname);
           const branchname = res.data.userValid.branchname;
-          Axios.get(`http://localhost:8000/branchparceldata/${branchname}`)
+          Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
             .then((res) => {
               setData(res.data.branchinfo);
               setbranchparcel(res.data.branchdata)
@@ -82,9 +82,9 @@ function Viewparcel() {
       console.log("It Clicked");
 
       const assignd = { assignto };
-      Axios.put(`http://localhost:8000/updateparcelstatus/${id}`, assignd)
+      Axios.put(`${process.env.LIVE_NODE}/updateparcelstatus/${id}`, assignd)
         .then((res) => {
-          Axios.get(`http://localhost:8000/branchparceldata/${branchname}`)
+          Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
             .then((res) => {
               setData(res.data.branchinfo);
               setbranchparcel(res.data.branchdata)
@@ -126,9 +126,9 @@ function Viewparcel() {
     
     }
        console.log("pstatus",{parcelstatus})
-    Axios.put(`http://localhost:8000/updateparcelstatus/${id}`, {parcelstatus})
+    Axios.put(`${process.env.LIVE_NODE}/updateparcelstatus/${id}`, {parcelstatus})
       .then((res) => {
-        Axios.get(`http://localhost:8000/branchparceldata/${branchname}`)
+        Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
           .then((res) => {
             setData(res.data.branchinfo);
             setbranchparcel(res.data.branchdata)
@@ -159,9 +159,9 @@ function Viewparcel() {
         {
           label: 'Yes',
           onClick: () => {
-            Axios.delete(`http://localhost:8000/deleteparceldata/${id}`)
+            Axios.delete(`${process.env.LIVE_NODE}/deleteparceldata/${id}`)
               .then((res) => {
-                Axios.get(`http://localhost:8000/branchparceldata/${branchname}`)
+                Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
                   .then((res) => {
                     setData(res.data.branchinfo);
                     setbranchparcel(res.data.branchdata)
