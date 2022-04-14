@@ -22,10 +22,10 @@ const Branchstaff = () => {
     const [username,setusername]=useState();
 
     useEffect(() => {
-        Axios.get(`${process.env.LIVE_NODE}/loggedin`, { headers: { 'authorization': getToken } })
+        Axios.get(`${process.env.REACT_APP_URL}/loggedin`, { headers: { 'authorization': getToken } })
             .then((res) => {
                 setusername(res.data.userValid.username);
-                Axios.get(`${process.env.LIVE_NODE}/staffinfo`)
+                Axios.get(`${process.env.REACT_APP_URL}/staffinfo`)
                     .then((res) => {
                         SetData(res.data.staffData);
                     })
@@ -40,9 +40,9 @@ const Branchstaff = () => {
                 {
                     label: 'Yes',
                     onClick: () => {
-                        Axios.delete(`${process.env.LIVE_NODE}/deleteStaffData/${id}`)
+                        Axios.delete(`${process.env.REACT_APP_URL}/deleteStaffData/${id}`)
                             .then((res) => {
-                                Axios.get(`${process.env.LIVE_NODE}/staffinfo`)
+                                Axios.get(`${process.env.REACT_APP_URL}/staffinfo`)
                                     .then((res) => {
                                         SetData(res.data.staffData);
                                     })

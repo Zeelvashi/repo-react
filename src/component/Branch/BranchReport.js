@@ -38,12 +38,12 @@ const BranchReport = () => {
     useEffect(() => {
         if (getToken) {
             setbdate(" ")
-            Axios.get(`${process.env.LIVE_NODE}/bloggedin`, { headers: { 'authorization': getToken } })
+            Axios.get(`${process.env.REACT_APP_URL}/bloggedin`, { headers: { 'authorization': getToken } })
                 .then((res) => {
                     setusername(res.data.userValid.username);
                     setbranchname(res.data.userValid.branchname);
                     const branchname = res.data.userValid.branchname;
-                    Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
+                    Axios.get(`${process.env.REACT_APP_URL}/branchparceldata/${branchname}`)
                         .then((res) => {
                             console.log('stf data', res.data.stfdata);
                             setstaffname(res.data.stfdata);
@@ -60,7 +60,7 @@ const BranchReport = () => {
         e.preventDefault();
         setbranchshow(" ");
         const staffname = info;
-        Axios.get(`${process.env.LIVE_NODE}/staffreport/${staffname}`)
+        Axios.get(`${process.env.REACT_APP_URL}/staffreport/${staffname}`)
             .then((res) => {
                 if (res.status === 200) {
                     Setshow("show");
@@ -79,7 +79,7 @@ const BranchReport = () => {
         Setshow(" ");
         const branchname = rbranchname;
         const pstatus = parcelstatus
-        Axios.get(`${process.env.LIVE_NODE}/branchparcelreport/${branchname}/${pstatus}/${bdate}/${btodate}`,)
+        Axios.get(`${process.env.REACT_APP_URL}/branchparcelreport/${branchname}/${pstatus}/${bdate}/${btodate}`,)
             .then((res) => {
                 if (bdate) {
                     console.log("parceldata:", res.data.parceldata);

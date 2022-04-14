@@ -37,13 +37,13 @@ const ReceiveParcel = () => {
 
     useEffect(() => {
         if (getToken) {
-            Axios.get(`${process.env.LIVE_NODE}/bloggedin`, { headers: { 'authorization': getToken } })
+            Axios.get(`${process.env.REACT_APP_URL}/bloggedin`, { headers: { 'authorization': getToken } })
                 .then((res) => {
 
                     setusername(res.data.userValid.username);
                     setbranchname(res.data.userValid.branchname);
                     const branchname = res.data.userValid.branchname;
-                    Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
+                    Axios.get(`${process.env.REACT_APP_URL}/branchparceldata/${branchname}`)
                         .then((res) => {
                             setData(res.data.branchinfo);
                             setbranchparcel(res.data.bdata)
@@ -82,10 +82,10 @@ const ReceiveParcel = () => {
             console.log("It Clicked");
 
             const assignd = { assignto: assignto.trim() };
-            Axios.put(`${process.env.LIVE_NODE}/updateassignstatus/${id}`, assignd)
+            Axios.put(`${process.env.REACT_APP_URL}/updateassignstatus/${id}`, assignd)
                 .then((res) => {
 
-                    Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
+                    Axios.get(`${process.env.REACT_APP_URL}/branchparceldata/${branchname}`)
                         .then((res) => {
                             setData(res.data.branchinfo);
                             setbranchparcel(res.data.bdata)
@@ -125,9 +125,9 @@ const ReceiveParcel = () => {
 
         }
         console.log("pstatus", { branchparcelstatus })
-        Axios.put(`${process.env.LIVE_NODE}/updatebranchparcelstatus/${id}`, { branchparcelstatus })
+        Axios.put(`${process.env.REACT_APP_URL}/updatebranchparcelstatus/${id}`, { branchparcelstatus })
             .then((res) => {
-                Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
+                Axios.get(`${process.env.REACT_APP_URL}/branchparceldata/${branchname}`)
                     .then((res) => {
                         setData(res.data.branchinfo);
                         setbranchparcel(res.data.bdata)

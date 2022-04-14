@@ -21,13 +21,13 @@ const StaffInfo = () => {
     const [total,settotal]=useState();
     useEffect(() => {
         if (getstaffToken) {
-            Axios.get(`${process.env.LIVE_NODE}/sloggedin`, {
+            Axios.get(`${process.env.REACT_APP_URL}/sloggedin`, {
                 headers: { authorization: getstaffToken },
             }).then((res) => {
                 setusername(res.data.userValid.username);
                 const username = res.data.userValid.username;
                 const staffname=res.data.userValid.staffname;
-                Axios.get(`${process.env.LIVE_NODE}/staffnotification/${staffname}`)
+                Axios.get(`${process.env.REACT_APP_URL}/staffnotification/${staffname}`)
                 .then((res)=>{
                         settotal(res.data.countnotify);
                 })

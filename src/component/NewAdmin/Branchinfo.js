@@ -20,10 +20,10 @@ const Branchtable = () => {
     const [username,setusername]=useState();
 
     useEffect(() => {
-        Axios.get(`${process.env.LIVE_NODE}/loggedin`, { headers: { 'authorization': getToken } })
+        Axios.get(`${process.env.REACT_APP_URL}/loggedin`, { headers: { 'authorization': getToken } })
         .then((res) => {
             setusername(res.data.userValid.username);
-            Axios.get(`${process.env.LIVE_NODE}/branchinfo`)
+            Axios.get(`${process.env.REACT_APP_URL}/branchinfo`)
             .then((res) => {
                 SetData(res.data.branchData);
             })
@@ -39,9 +39,9 @@ const Branchtable = () => {
                 {
                     label: 'Yes',
                     onClick: () => {
-                        Axios.delete(`${process.env.LIVE_NODE}/deleteBranchData/${id}`)
+                        Axios.delete(`${process.env.REACT_APP_URL}/deleteBranchData/${id}`)
                             .then((res) => {
-                                Axios.get(`${process.env.LIVE_NODE}/branchinfo`)
+                                Axios.get(`${process.env.REACT_APP_URL}/branchinfo`)
                                     .then((res) => {
                                         SetData(res.data.branchData);
                                     })

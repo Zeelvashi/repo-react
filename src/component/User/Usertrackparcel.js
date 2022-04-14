@@ -33,7 +33,7 @@ const Usertrackparcel = () => {
     }, [])
     const setcap = () => {
         const referancenumber = ref;
-        Axios.get(`${process.env.LIVE_NODE}/trackparcel/${referancenumber}`)
+        Axios.get(`${process.env.REACT_APP_URL}/trackparcel/${referancenumber}`)
             .then((res) => {
                 if (res.status == 400) {
                     Setreferr("Reference no. Not Exists")
@@ -61,7 +61,7 @@ const Usertrackparcel = () => {
         else {
             setcaptcha("");
             const referancenumber = ref;
-            Axios.get(`${process.env.LIVE_NODE}/trackparcel/${referancenumber}`)
+            Axios.get(`${process.env.REACT_APP_URL}/trackparcel/${referancenumber}`)
                 .then((res) => {
                     if (res.status === 200) {
                         Setshow("show");

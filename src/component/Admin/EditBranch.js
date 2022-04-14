@@ -36,7 +36,7 @@ const EditBranch = () => {
       
       useEffect(()=>{
         
-        Axios.get(`${process.env.LIVE_NODE}/editdata/${id}`)
+        Axios.get(`${process.env.REACT_APP_URL}/editdata/${id}`)
         .then((res)=>{
             console.log("data:",res.data.editData)
            setUser(res.data.editData)

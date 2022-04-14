@@ -21,7 +21,7 @@ const ChangePass = () => {
             seterror("Password and confirmpassword must be same!")
         }
         else {
-            Axios.put(`${process.env.LIVE_NODE}/updatepassword/`, { username, password })
+            Axios.put(`${process.env.REACT_APP_URL}/updatepassword/`, { username, password })
                 .then((res) => {
                     if (res.status === 200) {
                         toast.success("Change Successfully..", { autoClose: 1000 }

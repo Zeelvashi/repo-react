@@ -75,7 +75,7 @@ const Branchinfo = () => {
 
     useEffect(() => {
         if (getToken) {
-            Axios.get(`${process.env.LIVE_NODE}/bloggedin`, { headers: { 'authorization': getToken } })
+            Axios.get(`${process.env.REACT_APP_URL}/bloggedin`, { headers: { 'authorization': getToken } })
                 .then((res) => {
                     // console.log('first res', res.data);
                     // setuser(res.data.userValid.username);
@@ -84,7 +84,7 @@ const Branchinfo = () => {
                     console.log("login successfully");
                     setbranchname(res.data.userValid.branchname)
                     const branchname = res.data.userValid.branchname
-                    Axios.get(`${process.env.LIVE_NODE}/notificationdata/${branchname}`)
+                    Axios.get(`${process.env.REACT_APP_URL}/notificationdata/${branchname}`)
                         .then((res) => {
                             console.log("total:", res.data.total);
 
@@ -112,7 +112,7 @@ const Branchinfo = () => {
 
                         }
                         )
-                    Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
+                    Axios.get(`${process.env.REACT_APP_URL}/branchparceldata/${branchname}`)
                         .then((res) => {
                             // console.log(res.data.tparcel);
                             setinfo({
@@ -164,10 +164,10 @@ const Branchinfo = () => {
     const clearnotify = () => {
 
         var branchnm = branchnames
-        Axios.put(`${process.env.LIVE_NODE}/updateflag/${branchnm}`)
+        Axios.put(`${process.env.REACT_APP_URL}/updateflag/${branchnm}`)
             .then((res) => {
                 const branchname = branchnames
-                Axios.get(`${process.env.LIVE_NODE}/notificationdata/${branchname}`)
+                Axios.get(`${process.env.REACT_APP_URL}/notificationdata/${branchname}`)
                     .then((res) => {
                         console.log("total dataaa:", res.data.total);
 

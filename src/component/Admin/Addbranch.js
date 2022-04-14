@@ -34,7 +34,7 @@ const Addbranch = () => {
         e.preventDefault();
         const { branchname, branchaddress, branchcontactnumber, branchemail, city, zipcode } = user;
         const branchdata = { branchname, branchaddress, branchcontactnumber, branchemail, city, zipcode }
-        Axios.post(`${process.env.LIVE_NODE}/addbranch`, branchdata)
+        Axios.post(`${process.env.REACT_APP_URL}/addbranch`, branchdata)
             .then((res) => {
                 if (res.status === 200) {
                     toast.success("Data Added Successfully..", { autoClose: 1000 }
@@ -67,7 +67,7 @@ const Addbranch = () => {
 
     useEffect(() => {
         if (id) {
-            Axios.get(`${process.env.LIVE_NODE}/editdata/${id}`)
+            Axios.get(`${process.env.REACT_APP_URL}/editdata/${id}`)
                 .then((res) => {
                     console.log("data:", res.data.editData)
                     setUser(res.data.editData)
@@ -79,7 +79,7 @@ const Addbranch = () => {
         e.preventDefault();
         const { branchname, branchaddress, branchcontactnumber, branchemail, city, zipcode } = user;
         const branchdata = { branchname, branchaddress, branchcontactnumber, branchemail, city, zipcode };
-        Axios.put(`${process.env.LIVE_NODE}/updateBranchData/${id}`, branchdata)
+        Axios.put(`${process.env.REACT_APP_URL}/updateBranchData/${id}`, branchdata)
             .then((res) => {
                 if (res.status === 200) {
                     toast.success("Updated Successfully..", { autoClose: 1000 }

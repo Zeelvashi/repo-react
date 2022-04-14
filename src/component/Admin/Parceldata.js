@@ -25,10 +25,10 @@ const Parceldata = () => {
     const [username,setusername]=useState()
 
     useEffect(() => {
-        Axios.get(`${process.env.LIVE_NODE}/loggedin`, { headers: { 'authorization': getToken } })
+        Axios.get(`${process.env.REACT_APP_URL}/loggedin`, { headers: { 'authorization': getToken } })
             .then((res) => {
                 setusername(res.data.userValid.username);
-                Axios.get(`${process.env.LIVE_NODE}/parcelinfo`)
+                Axios.get(`${process.env.REACT_APP_URL}/parcelinfo`)
                     .then((res) => {
                         SetData(res.data.ParcelData);
                     })
@@ -44,9 +44,9 @@ const Parceldata = () => {
                 {
                     label: 'Yes',
                     onClick: () => {
-                        Axios.delete(`${process.env.LIVE_NODE}/deleteparceldata/${id}`)
+                        Axios.delete(`${process.env.REACT_APP_URL}/deleteparceldata/${id}`)
                             .then((res) => {
-                                Axios.get(`${process.env.LIVE_NODE}/parcelinfo`)
+                                Axios.get(`${process.env.REACT_APP_URL}/parcelinfo`)
                                     .then((res) => {
                                         SetData(res.data.ParcelData);
                                     })
@@ -70,9 +70,9 @@ const Parceldata = () => {
     const editstus = (e, id) => {
         const pstatus = { parcelstatus };
         console.log("It Clicked", pstatus);
-        Axios.put(`${process.env.LIVE_NODE}/updateparcelstatus/${id}`, pstatus)
+        Axios.put(`${process.env.REACT_APP_URL}/updateparcelstatus/${id}`, pstatus)
             .then((res) => {
-                Axios.get(`${process.env.LIVE_NODE}/parcelinfo`)
+                Axios.get(`${process.env.REACT_APP_URL}/parcelinfo`)
                     .then((res) => {
                         SetData(res.data.ParcelData);
                     })

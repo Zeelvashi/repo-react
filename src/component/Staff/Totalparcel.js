@@ -24,14 +24,14 @@ const Totalparcel = () => {
 
     useEffect(() => {
         if (getstaffToken) {
-            Axios.get(`${process.env.LIVE_NODE}/sloggedin`, {
+            Axios.get(`${process.env.REACT_APP_URL}/sloggedin`, {
                 headers: { authorization: getstaffToken },
             }).then((res) => {
                 setusername(res.data.userValid.username);
                 console.log(res.data.userValid.staffname);
                 setstaffname(res.data.userValid.staffname)
                 const username = res.data.userValid.staffname;
-                Axios.get(`${process.env.LIVE_NODE}/staffparceldata/${username}`)
+                Axios.get(`${process.env.REACT_APP_URL}/staffparceldata/${username}`)
                     .then((res) => {
                         setdata(res.data.staffdatadelivere);
                         console.log(res.data.staffdatadelivere);
@@ -54,10 +54,10 @@ const Totalparcel = () => {
 
         }
         console.log("pstatus", { branchparcelstatus })
-        Axios.put(`${process.env.LIVE_NODE}/updatestaffparcelstatus/${id}`, { branchparcelstatus })
+        Axios.put(`${process.env.REACT_APP_URL}/updatestaffparcelstatus/${id}`, { branchparcelstatus })
             .then((res) => {
                 const username = staffname
-                Axios.get(`${process.env.LIVE_NODE}/staffparceldata/${username}`)
+                Axios.get(`${process.env.REACT_APP_URL}/staffparceldata/${username}`)
                     .then((res) => {
                         console.log("d:",res.data.staffdatadelivere)
                         setdata(res.data.staffdatadelivere);

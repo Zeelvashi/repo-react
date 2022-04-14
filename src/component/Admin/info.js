@@ -61,11 +61,11 @@ const Info = () => {
 
     useEffect(() => {
         if (getToken) {
-            Axios.get(`${process.env.LIVE_NODE}/loggedin`, { headers: { 'authorization': getToken } })
+            Axios.get(`${process.env.REACT_APP_URL}/loggedin`, { headers: { 'authorization': getToken } })
                 .then((res) => {
                     console.log('first res', res.data.userValid.username);
                     setuser(res.data.userValid.username);
-                    Axios.get(`${process.env.LIVE_NODE}/showdata`)
+                    Axios.get(`${process.env.REACT_APP_URL}/showdata`)
                         .then((res) => {
                             setdata({
                                 totalbranch: res.data.totalbranch,

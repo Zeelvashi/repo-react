@@ -37,13 +37,13 @@ function Viewparcel() {
 
   useEffect(() => {
     if (getBranchToken) {
-      Axios.get(`${process.env.LIVE_NODE}/branchloggedin`, { headers: { 'authorization': getBranchToken } })
+      Axios.get(`${process.env.REACT_APP_URL}/branchloggedin`, { headers: { 'authorization': getBranchToken } })
         .then((res) => {
 
           setusername(res.data.userValid.username);
           setbranchname(res.data.userValid.branchname);
           const branchname = res.data.userValid.branchname;
-          Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
+          Axios.get(`${process.env.REACT_APP_URL}/branchparceldata/${branchname}`)
             .then((res) => {
               setData(res.data.branchinfo);
               setbranchparcel(res.data.branchdata)
@@ -82,9 +82,9 @@ function Viewparcel() {
       console.log("It Clicked");
 
       const assignd = { assignto };
-      Axios.put(`${process.env.LIVE_NODE}/updateparcelstatus/${id}`, assignd)
+      Axios.put(`${process.env.REACT_APP_URL}/updateparcelstatus/${id}`, assignd)
         .then((res) => {
-          Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
+          Axios.get(`${process.env.REACT_APP_URL}/branchparceldata/${branchname}`)
             .then((res) => {
               setData(res.data.branchinfo);
               setbranchparcel(res.data.branchdata)
@@ -126,9 +126,9 @@ function Viewparcel() {
     
     }
        console.log("pstatus",{parcelstatus})
-    Axios.put(`${process.env.LIVE_NODE}/updateparcelstatus/${id}`, {parcelstatus})
+    Axios.put(`${process.env.REACT_APP_URL}/updateparcelstatus/${id}`, {parcelstatus})
       .then((res) => {
-        Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
+        Axios.get(`${process.env.REACT_APP_URL}/branchparceldata/${branchname}`)
           .then((res) => {
             setData(res.data.branchinfo);
             setbranchparcel(res.data.branchdata)
@@ -159,9 +159,9 @@ function Viewparcel() {
         {
           label: 'Yes',
           onClick: () => {
-            Axios.delete(`${process.env.LIVE_NODE}/deleteparceldata/${id}`)
+            Axios.delete(`${process.env.REACT_APP_URL}/deleteparceldata/${id}`)
               .then((res) => {
-                Axios.get(`${process.env.LIVE_NODE}/branchparceldata/${branchname}`)
+                Axios.get(`${process.env.REACT_APP_URL}/branchparceldata/${branchname}`)
                   .then((res) => {
                     setData(res.data.branchinfo);
                     setbranchparcel(res.data.branchdata)
